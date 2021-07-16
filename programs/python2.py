@@ -30,7 +30,14 @@
     # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    s_list = list(string)
+    result = []
+    for letter in s_list:
+        result.append(letter)
+        result.append(letter)
+        result.append(letter)
+
+    return ''.join(result)
 
     # <QUESTION 2>
 
@@ -48,7 +55,14 @@ def one(string):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(num):
-    return False
+    count = 0
+    for number in range(1, num):
+        if num % number == 0 and number != 1:
+            count += 1
+    if count == 0:
+        return True
+    else: 
+        return False
 
     # <QUESTION 3>
 
@@ -65,7 +79,13 @@ def two(num):
     # What happens if you multiply a string by a number?
 
 def three(a):
-    return 1
+    aa = [str(a),str(a)]
+    aaa = [str(a),str(a),str(a)]
+    aaaa =[str(a),str(a),str(a),str(a)]
+    aa = int(''.join(aa))
+    aaa = int(''.join(aaa))
+    aaaa = int(''.join(aaaa))
+    return a + aa + aaa +aaaa
 
     # <QUESTION 4>
 
@@ -94,7 +114,15 @@ def three(a):
     # How would you seperate a string into characters?
 
 def four(string1, string2):
-    return ""
+    result = []
+    count = 0
+    list_1 = list(string1)
+    list_2 = list(string2)
+    for letter1 in list_1:
+        result.append(letter1)
+        result.append(list_2[count])
+        count += 1
+    return ''.join(result)
 
     # <QUESTION 5>
 
@@ -111,7 +139,15 @@ def four(string1, string2):
     # The random module contains a function called randint.
 
 def five():
-    return []
+    from random import randint
+    randy_list = []
+    count = 0 
+    while count < 5:
+        randy = randint(100,200)
+        if randy % 2 == 0:
+            randy_list.append(randy)
+            count += 1
+    return randy_list
 
     # <QUESTION 6>
 
@@ -130,8 +166,10 @@ def five():
     # There are no hints for this question.
     
 def six(string):
+    will_it_py = list(string)
+    if will_it_py[-1].lower() == 'y' and will_it_py[-2].lower() == 'p':
+        return True
     return False
-
     # <QUESTION 7>
 
     # Given three ints, a b c, one of them is small, one is medium and one is large. 
@@ -154,6 +192,12 @@ def six(string):
     # Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
+    result = [a,b,c]
+    result.sort()
+    range1= result[1] - result[0]
+    range2 = result[-1] - result[1]   
+    if range1 == range2:
+        return True
     return False
 
     # <QUESTION 8>
@@ -172,7 +216,25 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    return ""
+    length = len(string)
+    umm = list(string)
+    count = 0
+    a = int((length - num)/2)
+    if num == length:
+            return ''
+    elif int(length/2) < num:
+        umm = umm[0] + umm[-1]
+    else:
+        if num == 1:
+            del umm[a]
+            umm = ''.join(umm)
+        else:
+            while count < num:
+                del umm[a]
+                count +=1
+            umm = ''.join(umm)
+        
+    return umm
 
     # <QUESTION 9>
 
@@ -189,6 +251,16 @@ def eight(string, num):
     # There are no hints for this question.
 
 def nine(string1, string2):
+    ls1 = list(string1)
+    ls2 = list(string2)
+    count = 0
+    l2l = len(ls2)
+    for letter in ls1:
+        if letter in ls2:
+            count += 1
+            ls2.remove(letter)
+    if count == len(ls1) or count == l2l:
+        return True
     return False
 
     # <QUESTION 10>
@@ -207,4 +279,12 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    return []
+    count = 0
+    result =[]
+    while count < b:
+        count +=1
+        new_arr= []
+        for num in range(0,a):
+            new_arr.append(num *(count-1))
+        result.append(new_arr)
+    return result
