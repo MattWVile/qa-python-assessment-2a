@@ -285,8 +285,12 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    # count = 0
-    # result =[]
-    # while count < b:
-
-    return False
+    count = 0
+    result =[]
+    while count < b:
+        count +=1
+        new_arr= []
+        for num in range(0,a):
+            new_arr.append(num *(count-1))
+        result.append(new_arr)
+    return result
