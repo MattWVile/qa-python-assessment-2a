@@ -194,6 +194,12 @@ def six(string):
     # Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
+    result = [a,b,c]
+    result.sort()
+    range1= result[1] - result[0]
+    range2 = result[-1] - result[1]   
+    if range1 == range2:
+        return True
     return False
 
     # <QUESTION 8>
@@ -212,7 +218,25 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    return ""
+    length = len(string)
+    umm = list(string)
+    count = 0
+    a = int((length - num)/2)
+    if num == length:
+            return ''
+    elif int(length/2) < num:
+        umm = umm[0] + umm[-1]
+    else:
+        if num == 1:
+            del umm[a]
+            umm = ''.join(umm)
+        else:
+            while count < num:
+                del umm[a]
+                count +=1
+            umm = ''.join(umm)
+        
+    return umm
 
     # <QUESTION 9>
 
@@ -229,6 +253,19 @@ def eight(string, num):
     # There are no hints for this question.
 
 def nine(string1, string2):
+    ls1 = list(string1)
+    ls2 = list(string2)
+    count = 0
+    l2l = len(ls2)
+    for letter in ls1:
+        if letter in ls2:
+            count += 1
+            ls2.remove(letter)
+    print(count)
+    print(ls2)
+    print(len(ls2))
+    if count == len(ls1) or count == l2l:
+        return True
     return False
 
     # <QUESTION 10>
@@ -247,4 +284,8 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    return []
+    count = 0
+    result =[]
+    while count < b:
+
+    return result
