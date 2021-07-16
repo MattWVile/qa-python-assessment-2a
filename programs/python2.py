@@ -57,9 +57,6 @@ def one(string):
 def two(num):
     count = 0
     for number in range(1, num):
-        print(number)
-        print(num)
-        print(num % number)
         if num % number == 0 and number != 1:
             count += 1
     if count == 0:
@@ -262,9 +259,6 @@ def nine(string1, string2):
         if letter in ls2:
             count += 1
             ls2.remove(letter)
-    print(count)
-    print(ls2)
-    print(len(ls2))
     if count == len(ls1) or count == l2l:
         return True
     return False
