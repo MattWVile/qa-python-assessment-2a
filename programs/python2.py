@@ -55,15 +55,16 @@ def one(string):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(num):
-    # count = 0
-    # for number in range(1, num):
-    #     print(number)
-    #     print(number % num)
-    #     if number % num == 0:
-    #         count += 1
-    # if count == 0:
-    #     return True
-    # else: 
+    count = 0
+    for number in range(1, num):
+        print(number)
+        print(num)
+        print(num % number)
+        if num % number == 0 and number != 1:
+            count += 1
+    if count == 0:
+        return True
+    else: 
         return False
 
     # <QUESTION 3>
@@ -284,8 +285,8 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    count = 0
-    result =[]
-    while count < b:
+    # count = 0
+    # result =[]
+    # while count < b:
 
-    return result
+    return False
